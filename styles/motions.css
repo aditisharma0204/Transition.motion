@@ -1,0 +1,107 @@
+/* Each motion uses CSS custom properties as its parameter surface.
+   Setting --m-* on a parent (or the element itself) overrides the defaults. */
+
+.m-reveal {
+  animation: m-reveal var(--m-duration, 600ms) var(--m-easing, var(--ease-standard)) var(--m-delay, 0ms) both;
+}
+@keyframes m-reveal {
+  from { opacity: 0; transform: translateY(var(--m-distance, 16px)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.m-pop {
+  animation: m-pop var(--m-duration, 600ms) var(--m-easing, var(--ease-overshoot)) var(--m-delay, 0ms) both;
+}
+@keyframes m-pop {
+  from { opacity: 0; transform: scale(var(--m-scale-from, 0.7)); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.m-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--m-color-base, var(--slds-color-neutral-90)) 0%,
+    var(--m-color-highlight, var(--slds-color-neutral-100)) 50%,
+    var(--m-color-base, var(--slds-color-neutral-90)) 100%
+  );
+  background-size: 200% 100%;
+  animation: m-shimmer var(--m-duration, 2000ms) linear infinite;
+}
+@keyframes m-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.m-glow {
+  animation: m-glow var(--m-duration, 2400ms) var(--m-easing, ease-out) var(--m-delay, 0ms) infinite;
+}
+@keyframes m-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--m-color, var(--slds-color-brand-base-50)); }
+  50% { box-shadow: 0 0 0 var(--m-spread, 16px) transparent; }
+}
+
+.m-blur-reveal {
+  animation: m-blur-reveal var(--m-duration, 700ms) var(--m-easing, var(--ease-standard)) var(--m-delay, 0ms) both;
+}
+@keyframes m-blur-reveal {
+  from { opacity: 0; filter: blur(var(--m-blur, 12px)); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+.m-fade {
+  animation: m-fade var(--m-duration, 480ms) var(--m-easing, ease-out) var(--m-delay, 0ms) both;
+}
+@keyframes m-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.m-slide {
+  animation: m-slide var(--m-duration, 600ms) var(--m-easing, var(--ease-standard)) var(--m-delay, 0ms) both;
+}
+@keyframes m-slide {
+  from { opacity: 0; transform: translate(var(--m-tx, 0), var(--m-ty, 24px)); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+.m-word-reveal {
+  animation: m-word-reveal var(--m-duration, 700ms) var(--m-easing, var(--ease-standard)) var(--m-delay, 0ms) both;
+}
+@keyframes m-word-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--m-distance, 12px));
+    filter: blur(var(--m-blur, 8px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.m-breathing {
+  animation: m-breathing var(--m-duration, 3000ms) var(--m-easing, ease-in-out) var(--m-delay, 0ms) infinite;
+}
+@keyframes m-breathing {
+  0%, 100% { transform: scale(1); opacity: var(--m-opacity-min, 0.7); }
+  50%      { transform: scale(var(--m-scale-max, 1.08)); opacity: 1; }
+}
+
+.m-ripple {
+  position: relative;
+  isolation: isolate;
+}
+.m-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--m-color, var(--slds-color-brand-base-50));
+  animation: m-ripple var(--m-duration, 1500ms) var(--m-easing, ease-out) var(--m-delay, 0ms) infinite;
+  pointer-events: none;
+}
+@keyframes m-ripple {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(var(--m-scale-to, 1.8)); opacity: 0; }
+}

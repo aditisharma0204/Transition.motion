@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transitions Library</title>
+  <link rel="stylesheet" href="styles/tokens.css?v=12" />
+  <link rel="stylesheet" href="styles/motions.css?v=12" />
+  <link rel="stylesheet" href="styles/studio.css?v=12" />
+  <link rel="stylesheet" href="styles/scenes.css?v=13" />
+
+  <script type="importmap">
+    { "imports": { "ogl": "https://esm.sh/ogl@1.0.11" } }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <script type="module" src="assets/scenes/grainient.js"></script>
+</head>
+<body class="studio-body">
+  <header class="studio-header">
+    <div class="studio-title">
+      <h1>Transitions Library</h1>
+    </div>
+  </header>
+
+  <nav class="scene-picker" id="scene-picker" aria-label="Scene picker"></nav>
+
+  <main class="studio-grid">
+    <aside class="studio-pane studio-pane-left" id="settings-panel" aria-label="Scene settings"></aside>
+
+    <section class="studio-stage-wrap">
+      <div class="scene-stage" id="scene-stage" aria-live="polite"></div>
+
+      <div class="scene-playback" id="scene-playback">
+        <div class="scene-playback-controls">
+          <button type="button" id="scene-play" class="btn btn-primary">Play</button>
+          <button type="button" id="scene-restart" class="scene-restart-btn is-disabled" aria-label="Restart from beginning" aria-disabled="true" title="Restart">
+            <svg viewBox="0 0 520 520" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M303 126a189 189 0 1 1 0 378h-82c-8 0-13-6-13-14v-32c0-8 6-15 14-15h81c71 0 128-57 128-128s-57-128-128-128H164l-11 1c-8 4-6 10 1 17l49 49c6 6 5 15-1 21l-22 22c-6 6-13 6-19 1L31 168c-5-5-5-13 0-18L160 21c6-6 16-6 21 0l21 21c6 6 6 16 0 21l-49 49c-6 6-6 13 4 13h7z" />
+            </svg>
+          </button>
+        </div>
+        <div class="scene-playback-track" id="scene-playback-track" role="slider" aria-label="Scrub timeline" tabindex="0">
+          <div class="scene-playback-fill" id="scene-playback-fill"></div>
+          <div class="scene-playback-marks" id="scene-playback-marks"></div>
+        </div>
+        <div class="scene-playback-time" id="scene-playback-time">0.0s / 0.0s</div>
+      </div>
+    </section>
+
+    <aside class="studio-pane studio-pane-right" id="copy-panel" aria-label="Copy and export"></aside>
+  </main>
+
+  <script type="module" src="js/studio.js?v=11"></script>
+</body>
+</html>

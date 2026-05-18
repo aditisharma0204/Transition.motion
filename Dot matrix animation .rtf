@@ -1,0 +1,159 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34360\viewh20320\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /* =========================================\
+   BASE STYLES (Shared across all 5)\
+   ========================================= */\
+.dot-matrix-wrapper \{\
+  background-color: #0a0a0a;\
+  padding: 32px;\
+  border-radius: 16px;\
+  display: inline-block;\
+  margin: 10px;\
+\}\
+\
+.dot-matrix \{\
+  display: grid;\
+  grid-template-columns: repeat(3, 13px);\
+  grid-template-rows: repeat(3, 13px);\
+  gap: 2px; /* Added a tiny 2px gap so the glowing edges don't clip each other */\
+  width: fit-content;\
+\}\
+\
+.dot-matrix > div \{\
+  width: 13px;\
+  height: 13px;\
+  background-color: #333333;\
+  border-radius: 2px;\
+\}\
+\
+/* =========================================\
+   1. PULSE (All dots breathe together)\
+   ========================================= */\
+@keyframes anim-pulse \{\
+  0%, 100% \{\
+    background-color: #333333;\
+    box-shadow: none;\
+    transform: scale(1);\
+  \}\
+  50% \{\
+    background-color: rgba(255, 20, 204, 1);\
+    box-shadow: 0 0 10px 0 rgba(255, 163, 235, 1);\
+    transform: scale(1.1);\
+  \}\
+\}\
+\
+.pulse > div \{\
+  animation: anim-pulse 1.5s infinite ease-in-out;\
+\}\
+\
+/* =========================================\
+   2. RIPPLE (Starts center, spreads out)\
+   ========================================= */\
+@keyframes anim-ripple \{\
+  0%, 100% \{\
+    background-color: #333333;\
+    box-shadow: none;\
+  \}\
+  30% \{\
+    background-color: rgba(255, 20, 204, 1);\
+    box-shadow: 0 0 10px 0 rgba(255, 163, 235, 1);\
+  \}\
+\}\
+\
+.ripple > div \{\
+  animation: anim-ripple 1.5s infinite ease-in-out;\
+\}\
+\
+/* Center dot */\
+.ripple > div:nth-child(5) \{ animation-delay: 0s; \}\
+/* Adjacent dots (top, bottom, left, right) */\
+.ripple > div:nth-child(2), .ripple > div:nth-child(4), \
+.ripple > div:nth-child(6), .ripple > div:nth-child(8) \{ animation-delay: 0.15s; \}\
+/* Corner dots */\
+.ripple > div:nth-child(1), .ripple > div:nth-child(3), \
+.ripple > div:nth-child(7), .ripple > div:nth-child(9) \{ animation-delay: 0.3s; \}\
+\
+\
+/* =========================================\
+   3. WAVE (Diagonal sweep top-left to bottom-right)\
+   ========================================= */\
+@keyframes anim-wave \{\
+  0%, 100% \{ background-color: #333333; box-shadow: none; \}\
+  30% \{ background-color: rgba(255, 20, 204, 1); box-shadow: 0 0 10px 0 rgba(255, 163, 235, 1); \}\
+\}\
+\
+.wave > div \{\
+  animation: anim-wave 1.5s infinite ease-in-out;\
+\}\
+\
+/* Grouped by diagonal distance from top-left */\
+.wave > div:nth-child(1) \{ animation-delay: 0s; \}\
+.wave > div:nth-child(2), .wave > div:nth-child(4) \{ animation-delay: 0.1s; \}\
+.wave > div:nth-child(3), .wave > div:nth-child(5), .wave > div:nth-child(7) \{ animation-delay: 0.2s; \}\
+.wave > div:nth-child(6), .wave > div:nth-child(8) \{ animation-delay: 0.3s; \}\
+.wave > div:nth-child(9) \{ animation-delay: 0.4s; \}\
+\
+\
+/* =========================================\
+   4. LOADING (Circular perimeter chase)\
+   ========================================= */\
+@keyframes anim-loading \{\
+  0%, 100% \{ background-color: #333333; box-shadow: none; opacity: 0.4; \}\
+  20% \{ background-color: rgba(255, 20, 204, 1); box-shadow: 0 0 10px 0 rgba(255, 163, 235, 1); opacity: 1; \}\
+\}\
+\
+.loading > div \{\
+  animation: anim-loading 1.2s infinite linear;\
+\}\
+\
+/* Center dot stays dark for this effect */\
+.loading > div:nth-child(5) \{ animation: none; background-color: #1a1a1a; \}\
+\
+/* Tracing the outer edge clockwise */\
+.loading > div:nth-child(1) \{ animation-delay: 0s; \}\
+.loading > div:nth-child(2) \{ animation-delay: 0.15s; \}\
+.loading > div:nth-child(3) \{ animation-delay: 0.3s; \}\
+.loading > div:nth-child(6) \{ animation-delay: 0.45s; \}\
+.loading > div:nth-child(9) \{ animation-delay: 0.6s; \}\
+.loading > div:nth-child(8) \{ animation-delay: 0.75s; \}\
+.loading > div:nth-child(7) \{ animation-delay: 0.9s; \}\
+.loading > div:nth-child(4) \{ animation-delay: 1.05s; \}\
+\
+\
+/* =========================================\
+   5. GROWING (Sequential scale pop)\
+   ========================================= */\
+@keyframes anim-growing \{\
+  0%, 100% \{\
+    transform: scale(0.2);\
+    background-color: #333333;\
+    box-shadow: none;\
+    opacity: 0;\
+  \}\
+  40%, 60% \{\
+    transform: scale(1);\
+    background-color: rgba(255, 20, 204, 1);\
+    box-shadow: 0 0 10px 0 rgba(255, 163, 235, 1);\
+    opacity: 1;\
+  \}\
+\}\
+\
+.growing > div \{\
+  animation: anim-growing 2s infinite ease-in-out;\
+\}\
+\
+/* 1 to 9 sequence */\
+.growing > div:nth-child(1) \{ animation-delay: 0s; \}\
+.growing > div:nth-child(2) \{ animation-delay: 0.1s; \}\
+.growing > div:nth-child(3) \{ animation-delay: 0.2s; \}\
+.growing > div:nth-child(4) \{ animation-delay: 0.3s; \}\
+.growing > div:nth-child(5) \{ animation-delay: 0.4s; \}\
+.growing > div:nth-child(6) \{ animation-delay: 0.5s; \}\
+.growing > div:nth-child(7) \{ animation-delay: 0.6s; \}\
+.growing > div:nth-child(8) \{ animation-delay: 0.7s; \}\
+.growing > div:nth-child(9) \{ animation-delay: 0.8s; \}}
