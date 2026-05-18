@@ -1,5 +1,6 @@
-# Transitions Library
+# tiny motion.
 
+A library of motion presets for demos and product vision work, inspired by CKO motion experiments.
 A studio for building, tweaking, and exporting motion primitives for Salesforce experiences. Vanilla HTML / CSS / JS — no build step.
 
 ## Run locally

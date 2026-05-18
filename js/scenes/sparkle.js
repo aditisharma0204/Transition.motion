@@ -34,7 +34,7 @@ export default {
     { id: 'starColor1',    label: 'Star color · stop 1', type: 'color', default: '--slds-g-color-brand-base-50' },
     { id: 'starColor2',    label: 'Star color · stop 2', type: 'color', default: '--slds-g-color-palette-violet-80' },
     { id: 'headlineSize',  label: 'Headline size',   type: 'range', min: 18,   max: 56,   step: 1,   default: 32,   unit: 'px' },
-    { id: 'headlineColor', label: 'Headline color',  type: 'color', default: '--slds-g-color-neutral-base-100' },
+    { id: 'headlineColor', label: 'Headline color',  type: 'color', default: '--slds-g-color-neutral-base-10' },
   ],
 
   copy: [

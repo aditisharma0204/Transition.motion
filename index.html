@@ -3,14 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Transitions Library</title>
+  <title>tiny motion.</title>
   <link rel="stylesheet" href="styles/tokens.css?v=12" />
   <link rel="stylesheet" href="styles/motions.css?v=12" />
   <link rel="stylesheet" href="styles/studio.css?v=12" />
   <link rel="stylesheet" href="styles/scenes.css?v=13" />
 
   <script type="importmap">
-    { "imports": { "ogl": "https://esm.sh/ogl@1.0.11" } }
+    { 
+      "imports": { 
+        "ogl": "https://esm.sh/ogl@1.0.11",
+        "motion": "https://esm.sh/motion"
+      } 
+    }
+  </script>
+  <script>
+    window.addEventListener('error', function(e) {
+      document.body.innerHTML += '<div style="position:fixed;top:0;left:0;background:red;color:white;padding:20px;z-index:9999;">ERROR: ' + e.message + ' at ' + e.filename + ':' + e.lineno + '</div>';
+    });
+    window.addEventListener('unhandledrejection', function(e) {
+      document.body.innerHTML += '<div style="position:fixed;top:0;left:0;background:red;color:white;padding:20px;z-index:9999;">PROMISE REJECTION: ' + e.reason + '</div>';
+    });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
   <script type="module" src="assets/scenes/grainient.js"></script>
@@ -18,7 +31,7 @@
 <body class="studio-body">
   <header class="studio-header">
     <div class="studio-title">
-      <h1>Transitions Library</h1>
+      <h1>tiny motion.</h1>
     </div>
   </header>
 

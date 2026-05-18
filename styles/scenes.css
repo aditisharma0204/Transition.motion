@@ -1,7 +1,7 @@
 /* Scene Studio — Vercel/agentic dark layout.
    Loads after studio.css; `body.studio-body` overrides theme tokens. */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap');
 
 .studio-body {
   --studio-bg: #08080a;
@@ -17,7 +17,7 @@
   --studio-radius: 8px;
   --studio-radius-sm: 6px;
 
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-feature-settings: 'cv09', 'cv11', 'ss01';
   background: var(--studio-bg);
   color: var(--studio-text);
@@ -49,9 +49,11 @@
 }
 .studio-body .studio-title h1::before {
   content: '';
-  width: 16px; height: 16px;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #ffffff 0%, #888 50%, #444 100%);
+  width: 24px; height: 24px;
+  background-image: url('../assets/salesforce-service-cloud.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   display: inline-block;
 }
 .studio-body .studio-title p {
@@ -1069,6 +1071,100 @@
 .dot-matrix.orbital > div:nth-child(7) { animation-delay: 1.2s; }
 .dot-matrix.orbital > div:nth-child(4) { animation-delay: 1.4s; }
 .dot-matrix.orbital > div:nth-child(5) { animation: anim-orbital 3s infinite ease-in-out; animation-delay: 0s; }
+
+/* ---------- Text Gradient scene ----------------------------------- */
+.text-gradient-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animated-gradient-text {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  max-width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.5s ease-out;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+.animated-gradient-text.with-border {
+  padding: 0.35rem 0.75rem;
+}
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--studio-stage-bg);
+  z-index: -1;
+}
+.text-content {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Expressive Card scene -------------------------------- */
+.scene-expressive-card {
+  width: 100%; height: 100%; position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.expressive-card-wrapper {
+  cursor: pointer;
+  perspective: 1000px;
+  padding: 40px; /* Provides a stable hit area so scaling the inner card doesn't trigger rapid mouseleave/mouseenter */
+}
+.expressive-card {
+  background-color: var(--card-base, #fff);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 320px;
+  color: #1a1a1e;
+  transform-origin: center center;
+}
+.expressive-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.expressive-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+}
 
 /* ---------- Stub fallback (kept in case of future stubs) ------- */
 .scene-stub-card { text-align: center; max-width: 360px; padding: 32px; color: var(--studio-text-muted); }

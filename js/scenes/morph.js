@@ -9,9 +9,7 @@ const animationOptions = [
   { value: 'ripple', label: 'Ripple' },
   { value: 'wave', label: 'Wave' },
   { value: 'loading', label: 'Loading' },
-  { value: 'growing', label: 'Growing' },
-  { value: 'spiral', label: 'Spiral' },
-  { value: 'cascade', label: 'Cascade' }
+  { value: 'growing', label: 'Growing' }
 ];
 
 export default {
@@ -23,7 +21,7 @@ export default {
   settings: [
     { id: 'step1', label: 'Step 1', type: 'select', default: 'growing', options: animationOptions },
     { id: 'step2', label: 'Step 2', type: 'select', default: 'pulse', options: animationOptions },
-    { id: 'step3', label: 'Step 3', type: 'select', default: 'cascade', options: animationOptions },
+    { id: 'step3', label: 'Step 3', type: 'select', default: 'wave', options: animationOptions },
     { id: 'stepDuration', label: 'Step Duration (ms)', type: 'range', min: 500, max: 4000, step: 100, default: 2000 },
     { id: 'baseColor',   label: 'Dot Base',      type: 'color', default: '--slds-g-color-neutral-base-20' },
     { id: 'showGlow',    label: 'Show Dot Glow', type: 'boolean', default: true, hidden: true },
@@ -303,34 +301,6 @@ export default {
   .dot-matrix.growing > div:nth-child(7) { animation-name: dot-7-arrowmove; animation-delay: 0s; }
   .dot-matrix.growing > div:nth-child(8) { animation-name: dot-8-arrowmove; animation-delay: 0s; }
   .dot-matrix.growing > div:nth-child(9) { animation-name: dot-9-arrowmove; animation-delay: 0s; }
-
-  /* 6. SPIRAL */
-  @keyframes anim-spiral {
-    0%, 100% { background-color: var(--dot-base); box-shadow: none; transform: scale(1); }
-    30% { background-color: var(--dot-glow); box-shadow: 0 0 10px 0 var(--dot-shadow); transform: scale(1.15); }
-  }
-  .dot-matrix.spiral > div { animation: anim-spiral 1.5s infinite ease-in-out; }
-  .dot-matrix.spiral > div:nth-child(1) { animation-delay: 0s; }
-  .dot-matrix.spiral > div:nth-child(2) { animation-delay: 0.1s; }
-  .dot-matrix.spiral > div:nth-child(3) { animation-delay: 0.2s; }
-  .dot-matrix.spiral > div:nth-child(6) { animation-delay: 0.3s; }
-  .dot-matrix.spiral > div:nth-child(9) { animation-delay: 0.4s; }
-  .dot-matrix.spiral > div:nth-child(8) { animation-delay: 0.5s; }
-  .dot-matrix.spiral > div:nth-child(7) { animation-delay: 0.6s; }
-  .dot-matrix.spiral > div:nth-child(4) { animation-delay: 0.7s; }
-  .dot-matrix.spiral > div:nth-child(5) { animation-delay: 0.8s; }
-
-  /* 7. CASCADE (Diagonal Wipe) */
-  @keyframes anim-cascade {
-    0%, 100% { background-color: var(--dot-base); box-shadow: none; transform: translateY(0); }
-    50% { background-color: var(--dot-glow); box-shadow: 0 0 10px 0 var(--dot-shadow); transform: translateY(-3px); }
-  }
-  .dot-matrix.cascade > div { animation: anim-cascade 1.5s infinite ease-in-out; }
-  .dot-matrix.cascade > div:nth-child(1) { animation-delay: 0s; }
-  .dot-matrix.cascade > div:nth-child(2), .dot-matrix.cascade > div:nth-child(4) { animation-delay: 0.15s; }
-  .dot-matrix.cascade > div:nth-child(3), .dot-matrix.cascade > div:nth-child(5), .dot-matrix.cascade > div:nth-child(7) { animation-delay: 0.3s; }
-  .dot-matrix.cascade > div:nth-child(6), .dot-matrix.cascade > div:nth-child(8) { animation-delay: 0.45s; }
-  .dot-matrix.cascade > div:nth-child(9) { animation-delay: 0.6s; }
 </style>
 </head>
 <body>

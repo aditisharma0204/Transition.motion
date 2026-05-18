@@ -19,7 +19,7 @@ export default {
     { id: 'lottieOut',     label: 'Lottie out',       type: 'range', min: 1000, max: 9000,  step: 50,  default: 4000, unit: 'ms' },
     { id: 'mascotScale',   label: 'Mascot scale',     type: 'range', min: 50,   max: 150,   step: 1,   default: 100,  unit: '%' },
     { id: 'headlineSize',  label: 'Headline size',    type: 'range', min: 18,   max: 56,    step: 1,   default: 32,   unit: 'px' },
-    { id: 'headlineColor', label: 'Headline color',   type: 'color', default: '--slds-g-color-neutral-base-100' },
+    { id: 'headlineColor', label: 'Headline color',   type: 'color', default: '--slds-g-color-neutral-base-10' },
   ],
 
   copy: [

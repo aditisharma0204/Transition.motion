@@ -2,4 +2,4 @@
 .claude/
 *.pyc
 __pycache__/
-.cursor/
+.cursor/node_modules/

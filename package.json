@@ -1,0 +1,24 @@
+{
+  "name": "transitions-library",
+  "version": "1.0.0",
+  "description": "A studio for building, tweaking, and exporting motion primitives for Salesforce experiences. Vanilla HTML / CSS / JS — no build step.",
+  "main": "dump.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditisharma0204/Transition.motion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aditisharma0204/Transition.motion/issues"
+  },
+  "homepage": "https://github.com/aditisharma0204/Transition.motion#readme",
+  "dependencies": {
+    "motion": "^12.38.0"
+  }
+}

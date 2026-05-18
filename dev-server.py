@@ -18,6 +18,11 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Expires', '0')
         super().end_headers()
 
+    def address_string(self):
+        # Prevent reverse DNS lookups which cause severe latency on macOS
+        host, port = self.client_address[:2]
+        return host
+
 if __name__ == '__main__':
     with socketserver.TCPServer(('', PORT), NoCacheHandler) as httpd:
         print(f'Serving (no cache) on http://localhost:{PORT}/')
