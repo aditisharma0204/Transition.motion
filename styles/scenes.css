@@ -124,6 +124,19 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--studio-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lottie-badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--studio-surface-3);
+  color: var(--studio-text-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 .panel-scene-desc {
   margin: 0;

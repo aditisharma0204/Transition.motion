@@ -23,6 +23,7 @@ export default {
   id: 'sparkle',
   name: 'Sparkle',
   description: 'Lottie sparkle ignition with a headline. Star gradient and timing are scrub-driven.',
+  usesLottie: true,
   loop: true,
 
   settings: [

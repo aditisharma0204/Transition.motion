@@ -18,13 +18,13 @@
 
 ### Gaps to fill next :soon:
 - [ ] **Live preview in README**: Add a GIF/video of the studio in action.
-- [ ] **Review Text category**: Populate it or hide it. (Note: We added 'Gradient Text' recently, need to verify).
+- [x] **Review Text category**: The text category was an artifact of the older `js/motions` architecture. We've added `text-gradient.js` to the new `scenes` array, and updated the README to reflect the new architecture.
 - [ ] **Add Latency primitives**: Shimmer is the only one. Needs more love.
 - [x] **Add `CONTRIBUTING.md`**: Lower the barrier for adding primitives.
 
 ### UX Thoughts :bulb:
-- [ ] **Timeline/Sequencer UX**: Simplify the UI (0.0s / 0.0s) if a sequencer is not in v1 scope.
+- [x] **Timeline/Sequencer UX**: Simplified the UI by removing the `0.0s / 0.0s` text indicator.
 
 ### Lottie Strategy
 - [x] **Clarify Lottie workflow in README**: Explicitly state that Lottie source files live in the repo for contributors, but users never need a subscription because the export is a self-contained HTML bundle.
-- [ ] **Add "Lottie" badge**: Add a UI indicator for primitives powered by a `.lottie` file so users know what's under the hood.
+- [x] **Add "Lottie" badge**: Added a UI indicator next to the title in the settings panel for primitives powered by a `.lottie` file so users know what's under the hood.

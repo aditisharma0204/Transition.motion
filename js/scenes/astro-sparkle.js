@@ -12,6 +12,7 @@ export default {
   id: 'astro-sparkle',
   name: 'Astro Sparkle',
   description: 'Astro mascot framed by orbiting sparkle keyframes — hand-edited Lottie.',
+  usesLottie: true,
 
   settings: [
     { id: 'total',         label: 'Total duration',   type: 'range', min: 1500, max: 10000, step: 100, default: 5000, unit: 'ms' },

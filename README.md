@@ -49,7 +49,7 @@ The gallery renders cards automatically from the registry.
 
 ## Categories
 
-`entrance` · `latency` · `attention` · `text` — extend in `js/motions/index.js`.
+The primitives are currently organized as a flat gallery of `scenes` in `js/scenes/index.js`. Categories like `latency`, `text`, and `attention` are conceptual buckets that these primitives fall into.
 
 ## Export formats
 

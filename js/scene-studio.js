@@ -147,6 +147,12 @@ function renderSettingsPanel() {
   const title = document.createElement('h2');
   title.className = 'panel-scene-title';
   title.textContent = scene.name;
+  if (scene.usesLottie) {
+    const badge = document.createElement('span');
+    badge.className = 'lottie-badge';
+    badge.textContent = 'Lottie';
+    title.appendChild(badge);
+  }
   header.appendChild(title);
 
   if (scene.description) {
@@ -387,13 +393,9 @@ function currentT() {
 
 function updatePlaybackUI(t, total) {
   const fill = document.getElementById('scene-playback-fill');
-  const time = document.getElementById('scene-playback-time');
   if (fill) {
     fill.style.width = `${Math.min(100, (t / total) * 100)}%`;
     fill.dataset.t = String(t);
-  }
-  if (time) {
-    time.textContent = `${(t / 1000).toFixed(1)}s / ${(total / 1000).toFixed(1)}s`;
   }
   updateRestartEnabled(t);
 }

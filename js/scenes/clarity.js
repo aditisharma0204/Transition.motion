@@ -11,6 +11,7 @@ export default {
   id: 'clarity',
   name: 'Clarity',
   description: 'Lottie blur resolves into focus while three lines of copy fade through.',
+  usesLottie: true,
 
   settings: [
     { id: 'total',     label: 'Total duration', type: 'range', min: 3000, max: 12000, step: 100, default: 7100, unit: 'ms' },
