@@ -39,7 +39,15 @@ js/
 - **Why `package.json` exists**: The `package.json` and `package-lock.json` files are included purely for tracking external dependencies (like the `motion` library) and locking their versions. The browser fetches these packages directly from a CDN (`esm.sh`) via import maps in `index.html`. You do not need to run `npm install` or use Node.js to build the project.
 - **Lottie Strategy**: We use Lottie animations for complex shapes (like the Sparkle or Clarity effects). The raw `.lottie` or `.json` source files live in the repository (e.g., in `assets/` or `reference/`) for contributors. However, **users do not need a Lottie subscription**. When a user clicks "Export" in the studio, the application bundles a lightweight Lottie player and the required animation data directly into a self-contained `.html` file. The complexity stays on our side, not theirs.
 
-## Adding a new motion
+## Quick Build with Cursor
+
+Want to generate a new animation instantly? You can use the Cursor AI Agent!
+
+1. Open Cursor Chat (`Cmd+L`).
+2. Type: **"Quick Build: [your idea here]"** (e.g., *"Quick Build: A streaming text cursor that blinks"*).
+3. The motion agent will automatically create the Javascript file, write the CSS, hook up the UI controls, and register it in the gallery for you to preview immediately!
+
+## Adding a new motion manually
 
 1. Add `@keyframes` and a base class to `styles/motions.css`. Drive every parameter from a CSS custom property with a default.
 2. Create `js/motions/<id>.js` exporting a spec — `id`, `name`, `category`, `className`, `loop`, `preview`, `params[]`. Each param maps to a CSS custom property via `cssVar`.
