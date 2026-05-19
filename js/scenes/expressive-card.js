@@ -9,6 +9,8 @@ export default {
   id: 'expressive-card',
   name: 'Expressive Card',
   description: 'A UI card interaction demonstrating the M3 difference between Spatial Springs (bouncy scaling) and Effects Springs (linear color transitions).',
+  why: 'Demonstrates Material Design 3 spring physics for interactive elements.',
+  howToUse: 'Apply these spatial and effect springs to cards, modals, and list items that expand or elevate on hover/focus.',
   loop: true,
 
   settings: [

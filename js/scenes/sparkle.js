@@ -23,6 +23,8 @@ export default {
   id: 'sparkle',
   name: 'Sparkle',
   description: 'Lottie sparkle ignition with a headline. Star gradient and timing are scrub-driven.',
+  why: '"Ta-da!" moments. Highlighting a successful action, a new feature, or an AI-generated outcome.',
+  howToUse: 'Center stage in success modals or zero-state welcome screens.',
   usesLottie: true,
   loop: true,
 

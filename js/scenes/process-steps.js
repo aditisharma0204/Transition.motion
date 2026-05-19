@@ -44,6 +44,8 @@ export default {
   id: 'process-steps',
   name: 'Process Steps',
   description: 'Three sequential thinking-log lines: enter → shimmer → check pop → exit.',
+  why: 'Builds trust by exposing the "chain of thought." Users tolerate longer waits if they see what is happening.',
+  howToUse: 'When generating a large document, drafting an email, or running a complex workflow.',
 
   settings: [
     { id: 'enterDur',     label: 'Enter (steps 2–3)', type: 'range', min: 80,  max: 600,  step: 10, default: 220,  unit: 'ms' },

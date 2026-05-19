@@ -12,6 +12,8 @@ export default {
   id: 'astro-sparkle',
   name: 'Astro Sparkle',
   description: 'Astro mascot framed by orbiting sparkle keyframes — hand-edited Lottie.',
+  why: '"Ta-da!" moments. Highlighting a successful action, a new feature, or an AI-generated outcome.',
+  howToUse: 'Center stage in success modals or zero-state welcome screens.',
   usesLottie: true,
 
   settings: [

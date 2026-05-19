@@ -11,6 +11,8 @@ export default {
   id: 'clarity',
   name: 'Clarity',
   description: 'Lottie blur resolves into focus while three lines of copy fade through.',
+  why: 'A beautiful, premium way to introduce a completely new section or heavy panel without a jarring cut.',
+  howToUse: 'Full-screen or full-panel transitions where copy needs to be read sequentially before the UI resolves.',
   usesLottie: true,
 
   settings: [

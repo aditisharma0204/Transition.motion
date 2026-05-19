@@ -11,6 +11,8 @@ export default {
   id: 'dot-matrix',
   name: 'Dot Matrix',
   description: 'AI-first microinteractions using a 3x3 dot matrix grid.',
+  why: 'The quintessential lightweight AI indicator. It feels systematic and precise.',
+  howToUse: 'Drop this next to a chat input, inside a loading pill, or anywhere an AI agent is "typing" or "listening."',
   loop: true,
 
   settings: [

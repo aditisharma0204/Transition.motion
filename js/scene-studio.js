@@ -161,6 +161,26 @@ function renderSettingsPanel() {
     desc.textContent = scene.description;
     header.appendChild(desc);
   }
+
+  if (scene.why) {
+    const whyEl = document.createElement('div');
+    whyEl.className = 'panel-scene-info';
+    const strong = document.createElement('strong');
+    strong.textContent = 'Why? ';
+    whyEl.appendChild(strong);
+    whyEl.appendChild(document.createTextNode(scene.why));
+    header.appendChild(whyEl);
+  }
+
+  if (scene.howToUse) {
+    const howEl = document.createElement('div');
+    howEl.className = 'panel-scene-info';
+    const strong = document.createElement('strong');
+    strong.textContent = 'How to use: ';
+    howEl.appendChild(strong);
+    howEl.appendChild(document.createTextNode(scene.howToUse));
+    header.appendChild(howEl);
+  }
   
   root.appendChild(header);
 

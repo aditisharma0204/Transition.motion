@@ -16,6 +16,8 @@ export default {
   id: 'morph',
   name: 'Morph',
   description: 'Design multi-step AI loading sequences by chaining Dot Matrix animations.',
+  why: 'Shows that the AI is moving through phases of work (e.g., listening -> reasoning -> generating), rather than just hanging.',
+  howToUse: 'Full-screen loading states or heavy inference blockers.',
   loop: true,
 
   settings: [

@@ -144,6 +144,16 @@
   line-height: 1.4;
   color: var(--studio-text-muted);
 }
+.panel-scene-info {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--studio-text-muted);
+}
+.panel-scene-info strong {
+  color: var(--studio-text);
+  font-weight: 600;
+}
 
 .panel-heading {
   font-family: 'Geist Mono', ui-monospace, Monaco, monospace;

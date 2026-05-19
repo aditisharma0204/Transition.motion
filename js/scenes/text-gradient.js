@@ -3,6 +3,9 @@ import { tokenToHex } from './lottie-tint.js';
 export default {
   id: 'text-gradient',
   name: 'Gradient Text',
+  description: 'Animated multi-color text gradient loop.',
+  why: 'Draws the eye to a specific, short headline without changing the page layout.',
+  howToUse: 'Hero banners or empty-state titles that need a splash of dynamic color.',
   settings: [
     { id: 'text', label: 'Text', type: 'text', default: 'Add a splash of color!' },
     { id: 'animationSpeed', label: 'Animation Speed (s)', type: 'range', min: 1, max: 20, step: 0.5, default: 3 },

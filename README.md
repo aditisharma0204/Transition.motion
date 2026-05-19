@@ -49,7 +49,51 @@ The gallery renders cards automatically from the registry.
 
 ## Categories
 
-The primitives are currently organized as a flat gallery of `scenes` in `js/scenes/index.js`. Categories like `latency`, `text`, and `attention` are conceptual buckets that these primitives fall into.
+We organize our primitives into conceptual buckets depending on their role in the user journey. Here is a breakdown of the current library:
+
+### 1. Transition & reveal animations
+*Page-to-page transitions, panel slide-ins, and modal entrances.*
+
+- **Clarity**
+  - *Why?* A beautiful, premium way to introduce a completely new section or heavy panel without a jarring cut.
+  - *How to use:* Full-screen or full-panel transitions where copy needs to be read sequentially before the UI resolves.
+  - *Default Duration:* 7.1s (7100ms)
+- **Expressive Card**
+  - *Why?* Demonstrates Material Design 3 spring physics for interactive elements.
+  - *How to use:* Apply these spatial and effect springs to cards, modals, and list items that expand or elevate on hover/focus.
+  - *Default Duration:* Interactive (driven by hover state)
+- **Sparkle & Astro Sparkle**
+  - *Why?* "Ta-da!" moments. Highlighting a successful action, a new feature, or an AI-generated outcome.
+  - *How to use:* Center stage in success modals or zero-state welcome screens.
+  - *Default Duration:* 4.4s (Sparkle) / 5.0s (Astro Sparkle)
+- **Text Gradient**
+  - *Why?* Draws the eye to a specific, short headline without changing the page layout.
+  - *How to use:* Hero banners or empty-state titles that need a splash of dynamic color.
+  - *Default Duration:* 3.0s loop (3000ms)
+- **Gesture**
+  - *Why?* Highly cinematic, word-by-word reveal over a WebGL grainient background.
+  - *How to use:* High-fidelity vision demos or splash screens where storytelling and pacing are critical.
+  - *Default Duration:* Dynamic (scales with the number of text lines provided)
+
+### 2. AI "thinking" states
+*Ambient indicators, reasoning logs, and deep processing states.*
+
+- **Dot Matrix**
+  - *Why?* The quintessential lightweight AI indicator. It feels systematic and precise.
+  - *How to use:* Drop this next to a chat input, inside a loading pill, or anywhere an AI agent is "typing" or "listening."
+  - *Default Duration:* 1.5s - 2.0s infinite CSS loop
+- **Morph**
+  - *Why?* Shows that the AI is moving through *phases* of work (e.g., listening -> reasoning -> generating), rather than just hanging.
+  - *How to use:* Full-screen loading states or heavy inference blockers.
+  - *Default Duration:* 6.0s (3 chained steps, 2.0s each)
+- **Process Steps**
+  - *Why?* Builds trust by exposing the "chain of thought." Users tolerate longer waits if they see what is happening.
+  - *How to use:* When generating a large document, drafting an email, or running a complex workflow.
+  - *Default Duration:* Dynamic (default ~5.2s based on 3 steps)
+- **Experiment (The Core)**
+  - *Why?* A deeply ambient, organic glowing orb that feels alive.
+  - *How to use:* Voice-agent listening states or central dashboard hubs for agentic AI.
+  - *Default Duration:* Infinite CSS loop
 
 ## Export formats
 

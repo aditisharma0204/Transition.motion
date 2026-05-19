@@ -8,6 +8,8 @@ export default {
   id: 'experiment',
   name: 'Experiment',
   description: 'Experimental AI microinteractions with complex CSS keyframes.',
+  why: 'A deeply ambient, organic glowing orb that feels alive.',
+  howToUse: 'Voice-agent listening states or central dashboard hubs for agentic AI.',
   loop: true,
 
   settings: [

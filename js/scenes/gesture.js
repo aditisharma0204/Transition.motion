@@ -23,6 +23,8 @@ export default {
   id: 'gesture',
   name: 'Gesture',
   description: 'WebGL grainient backdrop with a word-by-word reveal across multiple lines.',
+  why: 'Highly cinematic, word-by-word reveal over a WebGL grainient background.',
+  howToUse: 'High-fidelity vision demos or splash screens where storytelling and pacing are critical.',
 
   settings: [
     { id: 'intro',   label: 'Intro delay',  type: 'range', min: 0,   max: 2000, step: 50,  default: 600, unit: 'ms' },
