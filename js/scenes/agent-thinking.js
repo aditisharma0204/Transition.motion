@@ -126,8 +126,8 @@ export default {
   .agent-thinking-grid > div:nth-child(3) { animation-delay: ${stagger * 3}ms; }
 
   @keyframes agent-thinking-pulse {
-    0%, 100% { opacity: 0.2; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
   }
 
   .agent-thinking-text {
