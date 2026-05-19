@@ -7,6 +7,7 @@ import dotMatrix from './dot-matrix.js';
 import morph from './morph.js';
 import experiment from './experiment.js';
 import textGradient from './text-gradient.js';
+import agentThinking from './agent-thinking.js';
 // import expressiveCard from './expressive-card.js';
 
-export const scenes = [sparkle, clarity, gesture, astroSparkle, processSteps, dotMatrix, morph, experiment, textGradient];
+export const scenes = [sparkle, clarity, gesture, astroSparkle, processSteps, dotMatrix, morph, experiment, textGradient, agentThinking];
