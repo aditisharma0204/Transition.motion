@@ -34,6 +34,11 @@ js/
     blur-reveal.js
 ```
 
+## Project Context
+- **Vanilla HTML/CSS/JS**: There is no build step required to run or edit this project. Just serve the files over a local server.
+- **Why `package.json` exists**: The `package.json` and `package-lock.json` files are included purely for tracking external dependencies (like the `motion` library) and locking their versions. The browser fetches these packages directly from a CDN (`esm.sh`) via import maps in `index.html`. You do not need to run `npm install` or use Node.js to build the project.
+- **Lottie Strategy**: We use Lottie animations for complex shapes (like the Sparkle or Clarity effects). The raw `.lottie` or `.json` source files live in the repository (e.g., in `assets/` or `reference/`) for contributors. However, **users do not need a Lottie subscription**. When a user clicks "Export" in the studio, the application bundles a lightweight Lottie player and the required animation data directly into a self-contained `.html` file. The complexity stays on our side, not theirs.
+
 ## Adding a new motion
 
 1. Add `@keyframes` and a base class to `styles/motions.css`. Drive every parameter from a CSS custom property with a default.
